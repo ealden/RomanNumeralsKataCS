@@ -25,5 +25,12 @@ namespace RomanNumeralsKataTest
         {
             Assert.AreEqual(5, converter.Convert("V"));
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(UnsupportedRomanNumeralException))]
+        public void ShouldThrowExceptionIfRomanNumeralNotSupported()
+        {
+            converter.Convert("A");
+        }
     }
 }

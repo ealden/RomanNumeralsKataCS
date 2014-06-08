@@ -14,8 +14,10 @@ namespace RomanNumeralsKata
             {
                 case "I": return 1;
                 case "V": return 5;
-                default: return 0;
+                default: throw new UnsupportedRomanNumeralException();
             }
         }
     }
+
+    public class UnsupportedRomanNumeralException : Exception { }
 }
