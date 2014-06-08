@@ -17,8 +17,6 @@ namespace RomanNumeralsKata
 
             foreach (var romanNumeral in input.ToCharArray())
             {
-                var number = RomanNumeralToChar(romanNumeral);
-
                 if (lastRomanNumeral != 'Z')
                 {
                     if (lastRomanNumeral == romanNumeral)
@@ -26,7 +24,7 @@ namespace RomanNumeralsKata
                         repeatCount++;
                     }
 
-                    bool romanNumeralNotRepeatable = (number == 5);
+                    bool romanNumeralNotRepeatable = (romanNumeral == 'V');
                     bool romanNumeralRepeated = repeatCount > 0;
 
                     if (romanNumeralNotRepeatable && romanNumeralRepeated)
@@ -41,7 +39,8 @@ namespace RomanNumeralsKata
                 }
 
                 lastRomanNumeral = romanNumeral;
-                total += number;
+
+                total += RomanNumeralToChar(romanNumeral);
             }
 
             return total;
