@@ -10,12 +10,14 @@ namespace RomanNumeralsKata
     {
         public int Convert(String input)
         {
-            if (!IsRomanNumeralStringValid(input))
+            if (IsRomanNumeralStringValid(input))
+            {
+                return ConvertValidRomanNumeralString(input);
+            }
+            else
             {
                 throw new InvalidRomanNumeralStringException();
             }
-
-            return ConvertValidRomanNumeralString(input);
         }
 
         private int ConvertValidRomanNumeralString(String input)
