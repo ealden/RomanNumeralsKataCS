@@ -102,5 +102,12 @@ namespace RomanNumeralsKataTest
         {
             converter.Convert("MMMM");
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidRomanNumeralStringException))]
+        public void ShouldThrowExceptionIfIIIIII()
+        {
+            converter.Convert("IIIIII");
+        }
     }
 }
