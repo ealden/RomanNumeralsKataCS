@@ -15,6 +15,11 @@ namespace RomanNumeralsKata
                 throw new InvalidRomanNumeralStringException();
             }
 
+            return ConvertValidRomanNumeralString(input);
+        }
+
+        private int ConvertValidRomanNumeralString(String input)
+        {
             var total = 0;
 
             foreach (var romanNumeral in input.ToCharArray())
