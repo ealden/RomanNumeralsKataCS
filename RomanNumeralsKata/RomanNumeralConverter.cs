@@ -65,8 +65,9 @@ namespace RomanNumeralsKata
             var InvalidXSubtraction = (input.Contains("XD") || input.Contains("XM"));
 
             var InvalidVSubtraction = (input.Contains("VX") || input.Contains("VL") || input.Contains("VC") || input.Contains("VD") || input.Contains("VM"));
+            var InvalidLSubtraction = (input.Contains("LC") || input.Contains("LD") || input.Contains("LM"));
 
-            var InvalidSubtraction = (InvalidISubtraction || InvalidXSubtraction || InvalidVSubtraction);
+            var InvalidSubtraction = (InvalidISubtraction || InvalidXSubtraction || InvalidVSubtraction || InvalidLSubtraction);
 
             return !(RepeatedTooMuch || InvalidRepeat || InvalidSubtraction);
         }

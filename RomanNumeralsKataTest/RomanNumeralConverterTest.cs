@@ -244,5 +244,26 @@ namespace RomanNumeralsKataTest
         {
             converter.Convert("VM");
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidRomanNumeralStringException))]
+        public void ShouldThrowExceptionForLC()
+        {
+            converter.Convert("LC");
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidRomanNumeralStringException))]
+        public void ShouldThrowExceptionForLD()
+        {
+            converter.Convert("LD");
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidRomanNumeralStringException))]
+        public void ShouldThrowExceptionForLM()
+        {
+            converter.Convert("LM");
+        }
     }
 }
