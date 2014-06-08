@@ -116,5 +116,19 @@ namespace RomanNumeralsKataTest
         {
             converter.Convert("VV");
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidRomanNumeralStringException))]
+        public void ShouldThrowExceptionIfLRepeated()
+        {
+            converter.Convert("LL");
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidRomanNumeralStringException))]
+        public void ShouldThrowExceptionIfDRepeated()
+        {
+            converter.Convert("DD");
+        }
     }
 }

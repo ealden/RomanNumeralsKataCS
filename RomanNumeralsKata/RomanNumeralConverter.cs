@@ -54,7 +54,7 @@ namespace RomanNumeralsKata
                         repeatCount++;
                     }
 
-                    bool romanNumeralNotRepeatable = (romanNumeral == 'V');
+                    bool romanNumeralNotRepeatable = (romanNumeral == 'V') || (romanNumeral == 'L') || (romanNumeral == 'D');
                     bool romanNumeralRepeated = repeatCount > 0;
 
                     if (romanNumeralNotRepeatable && romanNumeralRepeated)
