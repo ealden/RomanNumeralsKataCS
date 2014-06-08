@@ -58,15 +58,11 @@ namespace RomanNumeralsKata
 
         private bool IsRomanNumeralStringValid(String input)
         {
-            if (input.Contains("IL"))
-            {
-                return false;
-            }
-
             var RepeatedTooMuch = (input.Contains("IIII") || input.Contains("XXXX") || input.Contains("CCCC") || input.Contains("MMMM"));
             var InvalidRepeat = (input.Contains("VV") || input.Contains("LL") || input.Contains("DD"));
+            var InvalidSubtraction = (input.Contains("IL"));
 
-            return !(RepeatedTooMuch || InvalidRepeat);
+            return !(RepeatedTooMuch || InvalidRepeat || InvalidSubtraction);
         }
     }
 
