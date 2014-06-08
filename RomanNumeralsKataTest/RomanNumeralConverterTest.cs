@@ -62,5 +62,11 @@ namespace RomanNumeralsKataTest
         {
             Assert.AreEqual(100, converter.Convert("C"));
         }
+
+        [TestMethod]
+        public void ShouldReturn500ForD()
+        {
+            Assert.AreEqual(500, converter.Convert("D"));
+        }
     }
 }

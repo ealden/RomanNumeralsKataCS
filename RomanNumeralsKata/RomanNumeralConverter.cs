@@ -29,6 +29,7 @@ namespace RomanNumeralsKata
                 case 'X': return 10;
                 case 'L': return 50;
                 case 'C': return 100;
+                case 'D': return 500;
                 default: throw new UnsupportedRomanNumeralException();
             }
         }
