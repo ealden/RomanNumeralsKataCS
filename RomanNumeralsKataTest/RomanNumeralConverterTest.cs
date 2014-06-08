@@ -136,5 +136,35 @@ namespace RomanNumeralsKataTest
         {
             Assert.AreEqual(4, converter.Convert("IV"));
         }
+
+        [TestMethod]
+        public void ShouldReturn9ForIX()
+        {
+            Assert.AreEqual(9, converter.Convert("IX"));
+        }
+
+        [TestMethod]
+        public void ShouldReturn40ForXL()
+        {
+            Assert.AreEqual(40, converter.Convert("XL"));
+        }
+
+        [TestMethod]
+        public void ShouldReturn90ForXC()
+        {
+            Assert.AreEqual(90, converter.Convert("XC"));
+        }
+
+        [TestMethod]
+        public void ShouldReturn400ForCD()
+        {
+            Assert.AreEqual(400, converter.Convert("CD"));
+        }
+
+        [TestMethod]
+        public void ShouldReturn900ForCM()
+        {
+            Assert.AreEqual(900, converter.Convert("CM"));
+        }
     }
 }
