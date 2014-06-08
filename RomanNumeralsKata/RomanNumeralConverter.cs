@@ -63,6 +63,13 @@ namespace RomanNumeralsKata
                 return false;
             }
 
+            var RepeatedTooMuch = (input.Contains("IIII") || input.Contains("XXXX") || input.Contains("CCCC") || input.Contains("MMMM"));
+
+            if (RepeatedTooMuch)
+            {
+                return false;
+            }
+
             var lastRomanNumeral = 'Z';
             var repeatCount = 0;
 
@@ -77,11 +84,6 @@ namespace RomanNumeralsKata
                 bool romanNumeralRepeated = repeatCount > 0;
 
                 if (romanNumeralNotRepeatable && romanNumeralRepeated)
-                {
-                    return false;
-                }
-
-                if (repeatCount == 3)
                 {
                     return false;
                 }
