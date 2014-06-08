@@ -64,34 +64,9 @@ namespace RomanNumeralsKata
             }
 
             var RepeatedTooMuch = (input.Contains("IIII") || input.Contains("XXXX") || input.Contains("CCCC") || input.Contains("MMMM"));
+            var InvalidRepeat = (input.Contains("VV") || input.Contains("LL") || input.Contains("DD"));
 
-            if (RepeatedTooMuch)
-            {
-                return false;
-            }
-
-            var lastRomanNumeral = 'Z';
-            var repeatCount = 0;
-
-            foreach (var romanNumeral in input.ToCharArray())
-            {
-                if (((lastRomanNumeral != 'Z')) && (lastRomanNumeral == romanNumeral))
-                {
-                    repeatCount++;
-                }
-
-                bool romanNumeralNotRepeatable = (romanNumeral == 'V') || (romanNumeral == 'L') || (romanNumeral == 'D');
-                bool romanNumeralRepeated = repeatCount > 0;
-
-                if (romanNumeralNotRepeatable && romanNumeralRepeated)
-                {
-                    return false;
-                }
-
-                lastRomanNumeral = romanNumeral;
-            }
-
-            return true;
+            return !(RepeatedTooMuch || InvalidRepeat);
         }
     }
 
