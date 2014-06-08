@@ -74,5 +74,12 @@ namespace RomanNumeralsKataTest
         {
             Assert.AreEqual(1000, converter.Convert("M"));
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidRomanNumeralStringException))]
+        public void ShouldThrowExceptionIfIIII()
+        {
+            converter.Convert("IIII");
+        }
     }
 }

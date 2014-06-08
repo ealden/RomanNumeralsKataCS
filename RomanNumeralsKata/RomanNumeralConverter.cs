@@ -12,9 +12,28 @@ namespace RomanNumeralsKata
         {
             var total = 0;
 
+            var lastNumber = 0;
+            var repeatCount = 0;
+
             foreach (var romanNumeral in input.ToCharArray())
             {
-                total += RomanNumeralToChar(romanNumeral);
+                var number = RomanNumeralToChar(romanNumeral);
+
+                if (lastNumber != 0)
+                {
+                    if (lastNumber == number)
+                    {
+                        repeatCount++;
+                    }
+
+                    if (repeatCount == 3)
+                    {
+                        throw new InvalidRomanNumeralStringException();
+                    }
+                }
+
+                lastNumber = number;
+                total += number;
             }
 
             return total;
@@ -37,4 +56,5 @@ namespace RomanNumeralsKata
     }
 
     public class UnsupportedRomanNumeralException : Exception { }
+    public class InvalidRomanNumeralStringException : Exception { }
 }
