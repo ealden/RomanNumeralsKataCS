@@ -29,12 +29,9 @@ namespace RomanNumeralsKata
             {
                 var number = RomanNumeralToChar(romanNumeral);
 
-                if (lastNumber != 0)
+                if ((lastNumber != 0) && (lastNumber > number))
                 {
-                    if (lastNumber > number)
-                    {
-                        number *= -1;
-                    }
+                    number *= -1;
                 }
 
                 lastNumber = number;
@@ -66,25 +63,22 @@ namespace RomanNumeralsKata
 
             foreach (var romanNumeral in input.ToCharArray())
             {
-                if (lastRomanNumeral != 'Z')
+                if (((lastRomanNumeral != 'Z')) && (lastRomanNumeral == romanNumeral))
                 {
-                    if (lastRomanNumeral == romanNumeral)
-                    {
-                        repeatCount++;
-                    }
+                    repeatCount++;
+                }
 
-                    bool romanNumeralNotRepeatable = (romanNumeral == 'V') || (romanNumeral == 'L') || (romanNumeral == 'D');
-                    bool romanNumeralRepeated = repeatCount > 0;
+                bool romanNumeralNotRepeatable = (romanNumeral == 'V') || (romanNumeral == 'L') || (romanNumeral == 'D');
+                bool romanNumeralRepeated = repeatCount > 0;
 
-                    if (romanNumeralNotRepeatable && romanNumeralRepeated)
-                    {
-                        return false;
-                    }
+                if (romanNumeralNotRepeatable && romanNumeralRepeated)
+                {
+                    return false;
+                }
 
-                    if (repeatCount == 3)
-                    {
-                        return false;
-                    }
+                if (repeatCount == 3)
+                {
+                    return false;
                 }
 
                 lastRomanNumeral = romanNumeral;
