@@ -7,12 +7,23 @@ namespace RomanNumeralsKataTest
     [TestClass]
     public class RomanNumeralConverterTest
     {
+        RomanNumeralConverter converter;
+
+        [TestInitialize]
+        public void SetUp()
+        {
+            converter = new RomanNumeralConverter();
+        }
         [TestMethod]
         public void ShouldReturn1ForI()
         {
-            var converter = new RomanNumeralConverter();
-
             Assert.AreEqual(1, converter.Convert("I"));
+        }
+
+        [TestMethod]
+        public void ShouldReturn5ForV()
+        {
+            Assert.AreEqual(5, converter.Convert("V"));
         }
     }
 }
