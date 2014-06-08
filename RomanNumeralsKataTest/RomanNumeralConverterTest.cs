@@ -32,5 +32,11 @@ namespace RomanNumeralsKataTest
         {
             converter.Convert("A");
         }
+
+        [TestMethod]
+        public void ShouldReturn2ForII()
+        {
+            Assert.AreEqual(2, converter.Convert("II"));
+        }
     }
 }

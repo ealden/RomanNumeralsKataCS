@@ -10,10 +10,22 @@ namespace RomanNumeralsKata
     {
         public int Convert(String input)
         {
-            switch (input)
+            var total = 0;
+
+            foreach (var romanNumeral in input.ToCharArray())
             {
-                case "I": return 1;
-                case "V": return 5;
+                total += RomanNumeralToChar(romanNumeral);
+            }
+
+            return total;
+        }
+
+        private int RomanNumeralToChar(char romanNumeral)
+        {
+            switch (romanNumeral)
+            {
+                case 'I': return 1;
+                case 'V': return 5;
                 default: throw new UnsupportedRomanNumeralException();
             }
         }
