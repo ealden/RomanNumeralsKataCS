@@ -130,5 +130,11 @@ namespace RomanNumeralsKataTest
         {
             converter.Convert("DD");
         }
+
+        [TestMethod]
+        public void ShouldReturn4ForIV()
+        {
+            Assert.AreEqual(4, converter.Convert("IV"));
+        }
     }
 }

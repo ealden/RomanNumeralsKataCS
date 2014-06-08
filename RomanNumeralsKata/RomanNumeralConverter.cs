@@ -23,10 +23,22 @@ namespace RomanNumeralsKata
         private int ConvertValidRomanNumeralString(String input)
         {
             var total = 0;
+            var lastNumber = 0;
 
-            foreach (var romanNumeral in input.ToCharArray())
+            foreach (var romanNumeral in input.ToCharArray().Reverse())
             {
-                total += RomanNumeralToChar(romanNumeral);
+                var number = RomanNumeralToChar(romanNumeral);
+
+                if (lastNumber != 0)
+                {
+                    if (lastNumber > number)
+                    {
+                        number *= -1;
+                    }
+                }
+
+                lastNumber = number;
+                total += number;
             }
 
             return total;
