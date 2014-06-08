@@ -12,16 +12,16 @@ namespace RomanNumeralsKata
         {
             var total = 0;
 
-            var lastNumber = 0;
+            var lastRomanNumeral = 'Z';
             var repeatCount = 0;
 
             foreach (var romanNumeral in input.ToCharArray())
             {
                 var number = RomanNumeralToChar(romanNumeral);
 
-                if (lastNumber != 0)
+                if (lastRomanNumeral != 'Z')
                 {
-                    if (lastNumber == number)
+                    if (lastRomanNumeral == romanNumeral)
                     {
                         repeatCount++;
                     }
@@ -40,7 +40,7 @@ namespace RomanNumeralsKata
                     }
                 }
 
-                lastNumber = number;
+                lastRomanNumeral = romanNumeral;
                 total += number;
             }
 
