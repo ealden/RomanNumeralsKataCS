@@ -174,5 +174,26 @@ namespace RomanNumeralsKataTest
         {
             converter.Convert("IL");
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidRomanNumeralStringException))]
+        public void ShouldThrowExceptionForIC()
+        {
+            converter.Convert("IC");
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidRomanNumeralStringException))]
+        public void ShouldThrowExceptionForID()
+        {
+            converter.Convert("ID");
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidRomanNumeralStringException))]
+        public void ShouldThrowExceptionForIM()
+        {
+            converter.Convert("IM");
+        }
     }
 }

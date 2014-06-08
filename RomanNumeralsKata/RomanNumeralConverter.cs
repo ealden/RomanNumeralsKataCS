@@ -60,9 +60,10 @@ namespace RomanNumeralsKata
         {
             var RepeatedTooMuch = (input.Contains("IIII") || input.Contains("XXXX") || input.Contains("CCCC") || input.Contains("MMMM"));
             var InvalidRepeat = (input.Contains("VV") || input.Contains("LL") || input.Contains("DD"));
-            var InvalidSubtraction = (input.Contains("IL"));
 
-            return !(RepeatedTooMuch || InvalidRepeat || InvalidSubtraction);
+            var InvalidISubtraction = (input.Contains("IL") || input.Contains("IC") || input.Contains("ID") || input.Contains("IM"));
+
+            return !(RepeatedTooMuch || InvalidRepeat || InvalidISubtraction);
         }
     }
 
