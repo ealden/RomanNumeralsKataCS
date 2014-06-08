@@ -195,5 +195,12 @@ namespace RomanNumeralsKataTest
         {
             converter.Convert("IM");
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidRomanNumeralStringException))]
+        public void ShouldThrowExceptionForXD()
+        {
+            converter.Convert("XD");
+        }
     }
 }
