@@ -26,6 +26,14 @@ namespace RomanNumeralsKata
                         repeatCount++;
                     }
 
+                    bool romanNumeralNotRepeatable = (number == 5);
+                    bool romanNumeralRepeated = repeatCount > 0;
+
+                    if (romanNumeralNotRepeatable && romanNumeralRepeated)
+                    {
+                        throw new InvalidRomanNumeralStringException();
+                    }
+
                     if (repeatCount == 3)
                     {
                         throw new InvalidRomanNumeralStringException();
