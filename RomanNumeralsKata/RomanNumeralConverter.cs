@@ -27,7 +27,7 @@ namespace RomanNumeralsKata
 
             foreach (var romanNumeral in input.ToCharArray().Reverse())
             {
-                var number = RomanNumeralToChar(romanNumeral);
+                var number = ConvertRomanNumeralToNumber(romanNumeral);
 
                 if ((lastNumber != 0) && (lastNumber > number))
                 {
@@ -41,7 +41,7 @@ namespace RomanNumeralsKata
             return total;
         }
 
-        private int RomanNumeralToChar(char romanNumeral)
+        private int ConvertRomanNumeralToNumber(char romanNumeral)
         {
             switch (romanNumeral)
             {
