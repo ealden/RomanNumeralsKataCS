@@ -265,5 +265,12 @@ namespace RomanNumeralsKataTest
         {
             converter.Convert("LM");
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidRomanNumeralStringException))]
+        public void ShouldThrowExceptionForDM()
+        {
+            converter.Convert("DM");
+        }
     }
 }
