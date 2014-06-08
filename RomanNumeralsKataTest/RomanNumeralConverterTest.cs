@@ -272,5 +272,29 @@ namespace RomanNumeralsKataTest
         {
             converter.Convert("DM");
         }
+
+        [TestMethod]
+        public void ShouldReturn1904ForMCMIV()
+        {
+            Assert.AreEqual(1904, converter.Convert("MCMIV"));
+        }
+
+        [TestMethod]
+        public void ShouldReturn1954ForMCMLIV()
+        {
+            Assert.AreEqual(1954, converter.Convert("MCMLIV"));
+        }
+
+        [TestMethod]
+        public void ShouldReturn1990ForMCMXC()
+        {
+            Assert.AreEqual(1990, converter.Convert("MCMXC"));
+        }
+
+        [TestMethod]
+        public void ShouldReturn2014ForMMXIV()
+        {
+            Assert.AreEqual(2014, converter.Convert("MMXIV"));
+        }
     }
 }
