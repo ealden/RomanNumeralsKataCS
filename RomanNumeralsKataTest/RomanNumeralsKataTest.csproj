@@ -53,6 +53,12 @@
     <Compile Include="RomanNumeralConverterTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RomanNumeralsKata\RomanNumeralsKata.csproj">
+      <Project>{9a4a930c-d311-456c-9384-b622adee72b3}</Project>
+      <Name>RomanNumeralsKata</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

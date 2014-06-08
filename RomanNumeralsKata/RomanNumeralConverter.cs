@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace RomanNumeralsKata
 {
-    class RomanNumeralConverter
+    public class RomanNumeralConverter
     {
+        public int Convert(String input)
+        {
+            return 1;
+        }
     }
 }

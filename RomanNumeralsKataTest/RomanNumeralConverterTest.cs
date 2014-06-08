@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using RomanNumeralsKata;
 
 namespace RomanNumeralsKataTest
 {
@@ -7,9 +8,11 @@ namespace RomanNumeralsKataTest
     public class RomanNumeralConverterTest
     {
         [TestMethod]
-        public void ShouldReturnTrue()
+        public void ShouldReturn1ForI()
         {
-            Assert.AreEqual(true, true);
+            var converter = new RomanNumeralConverter();
+
+            Assert.AreEqual(1, converter.Convert("I"));
         }
     }
 }
