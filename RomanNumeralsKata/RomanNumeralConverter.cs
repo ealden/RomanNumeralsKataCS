@@ -10,36 +10,15 @@ namespace RomanNumeralsKata
     {
         public int Convert(String input)
         {
-            var total = 0;
+            if (!IsRomanNumeralStringValid(input))
+            {
+                throw new InvalidRomanNumeralStringException();
+            }
 
-            var lastRomanNumeral = 'Z';
-            var repeatCount = 0;
+            var total = 0;
 
             foreach (var romanNumeral in input.ToCharArray())
             {
-                if (lastRomanNumeral != 'Z')
-                {
-                    if (lastRomanNumeral == romanNumeral)
-                    {
-                        repeatCount++;
-                    }
-
-                    bool romanNumeralNotRepeatable = (romanNumeral == 'V');
-                    bool romanNumeralRepeated = repeatCount > 0;
-
-                    if (romanNumeralNotRepeatable && romanNumeralRepeated)
-                    {
-                        throw new InvalidRomanNumeralStringException();
-                    }
-
-                    if (repeatCount == 3)
-                    {
-                        throw new InvalidRomanNumeralStringException();
-                    }
-                }
-
-                lastRomanNumeral = romanNumeral;
-
                 total += RomanNumeralToChar(romanNumeral);
             }
 
@@ -59,6 +38,40 @@ namespace RomanNumeralsKata
                 case 'M': return 1000;
                 default: throw new UnsupportedRomanNumeralException();
             }
+        }
+
+        private bool IsRomanNumeralStringValid(String input)
+        {
+            var lastRomanNumeral = 'Z';
+            var repeatCount = 0;
+
+            foreach (var romanNumeral in input.ToCharArray())
+            {
+                if (lastRomanNumeral != 'Z')
+                {
+                    if (lastRomanNumeral == romanNumeral)
+                    {
+                        repeatCount++;
+                    }
+
+                    bool romanNumeralNotRepeatable = (romanNumeral == 'V');
+                    bool romanNumeralRepeated = repeatCount > 0;
+
+                    if (romanNumeralNotRepeatable && romanNumeralRepeated)
+                    {
+                        return false;
+                    }
+
+                    if (repeatCount == 3)
+                    {
+                        return false;
+                    }
+                }
+
+                lastRomanNumeral = romanNumeral;
+            }
+
+            return true;
         }
     }
 
