@@ -77,35 +77,35 @@ namespace RomanNumeralsKataTest
 
         [TestMethod]
         [ExpectedException(typeof(InvalidRomanNumeralStringException))]
-        public void ShouldThrowExceptionIfIIII()
+        public void ShouldThrowExceptionForIIII()
         {
             converter.Convert("IIII");
         }
 
         [TestMethod]
         [ExpectedException(typeof(InvalidRomanNumeralStringException))]
-        public void ShouldThrowExceptionIfXXXX()
+        public void ShouldThrowExceptionForXXXX()
         {
             converter.Convert("XXXX");
         }
 
         [TestMethod]
         [ExpectedException(typeof(InvalidRomanNumeralStringException))]
-        public void ShouldThrowExceptionIfCCCC()
+        public void ShouldThrowExceptionForCCCC()
         {
             converter.Convert("CCCC");
         }
 
         [TestMethod]
         [ExpectedException(typeof(InvalidRomanNumeralStringException))]
-        public void ShouldThrowExceptionIfMMMM()
+        public void ShouldThrowExceptionForMMMM()
         {
             converter.Convert("MMMM");
         }
 
         [TestMethod]
         [ExpectedException(typeof(InvalidRomanNumeralStringException))]
-        public void ShouldThrowExceptionIfIIIIII()
+        public void ShouldThrowExceptionForIIIIII()
         {
             converter.Convert("IIIIII");
         }
