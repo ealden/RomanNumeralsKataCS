@@ -14,6 +14,7 @@ namespace RomanNumeralsKataTest
         {
             converter = new RomanNumeralConverter();
         }
+
         [TestMethod]
         public void ShouldReturn1ForI()
         {
