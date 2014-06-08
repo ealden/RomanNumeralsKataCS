@@ -44,5 +44,11 @@ namespace RomanNumeralsKataTest
         {
             Assert.AreEqual(3, converter.Convert("III"));
         }
+
+        [TestMethod]
+        public void ShouldReturn10ForX()
+        {
+            Assert.AreEqual(10, converter.Convert("X"));
+        }
     }
 }
