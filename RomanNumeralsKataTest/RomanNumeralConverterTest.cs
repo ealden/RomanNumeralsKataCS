@@ -167,5 +167,12 @@ namespace RomanNumeralsKataTest
         {
             Assert.AreEqual(900, converter.Convert("CM"));
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidRomanNumeralStringException))]
+        public void ShouldThrowExceptionForIL()
+        {
+            converter.Convert("IL");
+        }
     }
 }

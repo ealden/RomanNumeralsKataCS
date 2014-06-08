@@ -58,6 +58,11 @@ namespace RomanNumeralsKata
 
         private bool IsRomanNumeralStringValid(String input)
         {
+            if (input.Contains("IL"))
+            {
+                return false;
+            }
+
             var lastRomanNumeral = 'Z';
             var repeatCount = 0;
 
