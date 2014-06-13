@@ -58,19 +58,19 @@ namespace RomanNumeralsKata
 
         private bool IsRomanNumeralStringValid(String input)
         {
-            var RepeatedTooMuch = (input.Contains("IIII") || input.Contains("XXXX") || input.Contains("CCCC") || input.Contains("MMMM"));
-            var InvalidRepeat = (input.Contains("VV") || input.Contains("LL") || input.Contains("DD"));
+            var repeatedTooMuch = (input.Contains("IIII") || input.Contains("XXXX") || input.Contains("CCCC") || input.Contains("MMMM"));
+            var invalidRepeat = (input.Contains("VV") || input.Contains("LL") || input.Contains("DD"));
 
-            var InvalidISubtraction = (input.Contains("IL") || input.Contains("IC") || input.Contains("ID") || input.Contains("IM"));
-            var InvalidXSubtraction = (input.Contains("XD") || input.Contains("XM"));
+            var invalidISubtraction = (input.Contains("IL") || input.Contains("IC") || input.Contains("ID") || input.Contains("IM"));
+            var invalidXSubtraction = (input.Contains("XD") || input.Contains("XM"));
 
-            var InvalidVSubtraction = (input.Contains("VX") || input.Contains("VL") || input.Contains("VC") || input.Contains("VD") || input.Contains("VM"));
-            var InvalidLSubtraction = (input.Contains("LC") || input.Contains("LD") || input.Contains("LM"));
-            var InvalidDSubtraction = input.Contains("DM");
+            var invalidVSubtraction = (input.Contains("VX") || input.Contains("VL") || input.Contains("VC") || input.Contains("VD") || input.Contains("VM"));
+            var invalidLSubtraction = (input.Contains("LC") || input.Contains("LD") || input.Contains("LM"));
+            var invalidDSubtraction = input.Contains("DM");
 
-            var InvalidSubtraction = (InvalidISubtraction || InvalidXSubtraction || InvalidVSubtraction || InvalidLSubtraction || InvalidDSubtraction);
+            var invalidSubtraction = (invalidISubtraction || invalidXSubtraction || invalidVSubtraction || invalidLSubtraction || invalidDSubtraction);
 
-            return !(RepeatedTooMuch || InvalidRepeat || InvalidSubtraction);
+            return !(repeatedTooMuch || invalidRepeat || invalidSubtraction);
         }
     }
 
